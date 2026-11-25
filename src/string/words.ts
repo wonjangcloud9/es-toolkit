@@ -16,7 +16,7 @@
  * // matches: ['camel', 'Case', 'HTTP', 'Request', '🚀']
  */
 export const CASE_SPLIT_PATTERN =
-  /\p{Lu}?\p{Ll}+|[0-9]+|\p{Lu}+(?!\p{Ll})|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{L}+/gu;
+  /\p{Lu}?\p{Ll}+|\p{Nd}+|\p{Lu}+(?!\p{Ll})|\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{L}+/gu;
 
 /**
  * Splits `string` into an array of its words, treating spaces and punctuation marks as separators.

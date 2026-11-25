@@ -84,6 +84,12 @@ describe('words', () => {
     expect(words('foo2bar')).toEqual(['foo', '2', 'bar']);
   });
 
+  it('should keep digits from other scripts, such as fullwidth digits', () => {
+    expect(words('２０２６년 계획')).toEqual(['２０２６', '년', '계획']);
+    expect(words('제３회 대회')).toEqual(['제', '３', '회', '대회']);
+    expect(words('٢٠٢٦ abc')).toEqual(['٢٠٢٦', 'abc']);
+  });
+
   it('should match emojis', () => {
     expect(words('camelCaseHTTPRequest🚀')).toEqual(['camel', 'Case', 'HTTP', 'Request', '🚀']);
   });
